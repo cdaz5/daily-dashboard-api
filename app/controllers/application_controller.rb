@@ -36,7 +36,7 @@ class ApplicationController < ActionController::API
   end
 
   def secret
-    'railsdragons'
+    ENV['jwt_secret']
   end
 
   def algorithm
