@@ -10,19 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822190716) do
+ActiveRecord::Schema.define(version: 20170829143758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.string "src"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "api_id"
+    t.string "name"
+    t.string "description"
+    t.string "url"
+    t.string "category"
+    t.string "language"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "birthday"
     t.string "outlets"
-    t.string "football"
-    t.string "baseball"
-    t.string "basketball"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

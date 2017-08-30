@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   namespace :api do
     namespace :v1 do
-      # get 'users/create', to: 'users#create'
-      # get 'users/edit'
+
       post '/login', to: 'auth#create'
       get '/me', to: 'auth#show'
       post '/signup', to: 'users#create'
+      get '/scrape', to: 'images#scrape'
+      get '/images', to: 'images#index'
+      get '/api_sources', to: 'images#fetch_sources_from_api'
+      get '/sources', to: 'images#sources'
     end
   end
-
-
-
-
-
 end

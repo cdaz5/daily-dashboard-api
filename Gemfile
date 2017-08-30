@@ -27,6 +27,8 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
+gem 'nokogiri'
+gem 'httparty'
 
 
 
