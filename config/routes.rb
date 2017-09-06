@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       post '/login', to: 'auth#create'
-      get '/me', to: 'auth#show'
+      post '/me', to: 'auth#show'
       post '/signup', to: 'users#create'
       get '/scrape', to: 'images#scrape'
       get '/images', to: 'images#index'
