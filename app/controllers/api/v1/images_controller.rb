@@ -4,18 +4,14 @@ require 'nokogiri'
 class Api::V1::ImagesController < ApplicationController
 
   def index
-    # byebug
     images = Image.all
 
     render json: images
   end
 
   def scrape
-    # byebug
     response = HTTParty.get('https://newsapi.org/sources')
-    # byebug
     parse_page = Nokogiri::HTML(response)
-    # byebug
     i = 1
     imgs =[]
     while i < 71
