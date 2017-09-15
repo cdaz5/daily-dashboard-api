@@ -1,5 +1,4 @@
 class Api::V1::AuthController < ApplicationController
-  # before_action :authorize_user!, only: [:show]
 
   def show
     user = User.find_by(email: params[:email])
@@ -11,8 +10,6 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def create
-    # byebug
-    # see if there is a user with this username
      user = User.find_by(email: params[:email])
     #  byebug
      # if the is, make sure that they have the correct password
